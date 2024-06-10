@@ -1,0 +1,12 @@
+{
+  "URL": "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login",
+  
+  "UserName": "Admin",
+  "Password": "admin123",
+  "UserRole": "Admin",
+  "EmployeeName": "Rahul Das",
+  "Status": "Enabled",
+  "Username": "Sravani123",
+  "password": "Rest123",
+  "Confirm Password": "Rest123"
+}
