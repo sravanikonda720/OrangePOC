@@ -25,7 +25,7 @@ namespace OrangePOC.Tests
         [Test]
         public void Addscreen()
         {
-            test = extent.CreateTest("Reading data");
+            test = extent.CreateTest("Add AdminLogin ");
             test.Log(Status.Info, "Started test login");
             Loginpage loginpage = new Loginpage(driver);
             Testreader Data = new Testreader();
@@ -43,49 +43,51 @@ namespace OrangePOC.Tests
             //test.Log(Status.Info, "Password");
             //loginpage.getSubmit().Click();
 
-
             test.Log(Status.Info, "Usermanagement tab");
             Admin_page adminpage = new Admin_page(driver);
             adminpage.getAdminTab().Click();
             test.Log(Status.Info, "Admin button clicked");
 
+            
             adminpage.getAddUser().Click();
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+       
             test.Log(Status.Info, "Add user button clicked");
 
             //ENter UserRole dropdown
-
-           adminpage.SelectUserRole("Admin");
+           
+            adminpage.SelectUserRole("Admin");
            test.Log(Status.Info, "from dropdown admin selected");
 
             //ENter Employeenamefield  dropdown
-
+          
             adminpage.Employeenamefield("Rahul  Das");
             Thread.Sleep(TimeSpan.FromSeconds(2));
             adminpage.SelectFirstSuggestion();
             test.Log(Status.Info, " Rahul is input from search dropdown RahulDas selected");
 
             //ENter Status dropdown
-
+           
             adminpage.Statusdropdown("Enabled"); 
             test.Log(Status.Info, "from dropdown Enabled  selected");
 
             //ENter Username 
-
-            adminpage.getusernameTAB().SendKeys("Sravani");
+           
+            adminpage.getusernameTAB().SendKeys("Sravani456");
             test.Log(Status.Info, "Enter value in USername Tab");
 
             //ENter Password 
-
+         
             adminpage.getpasswordTAB().SendKeys("Sravani123");
             test.Log(Status.Info, "Enter value in Password Tab");
 
             //Enter Confirm password
-
+          ;
             adminpage.getconfirmpasswordTAB().SendKeys("Sravani123");
             test.Log(Status.Info, "Enter value in Confirm Password Tab");
 
             //click on save button
+            
             adminpage.getSavebutton().Click();
             test.Log(Status.Info, "Save button click");
 
@@ -98,12 +100,6 @@ namespace OrangePOC.Tests
 
 
 
-
-            //loginpage.getSubmit().Click();
-            //test.Log(Status.Info, "Clicked");
-            //WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-            //wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//h6[text()='Dashboard']")));
-            //test.Log(Status.Info, "Dashboard is displayed or not ");
 
 
 

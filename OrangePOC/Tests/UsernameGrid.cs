@@ -18,8 +18,16 @@ namespace OrangePOC.Tests
         public void LoginandAdmin()
         {
 
+            test = extent.CreateTest("Add AdminLogin ");
+            test.Log(Status.Info, "Started test login");
             Loginpage loginpage = new Loginpage(driver);
-            loginpage.validlogin("Admin", "admin123");
+            Testreader Data = new Testreader();
+            string username = Data.getUserName();
+            string password = Data.getPassword();
+            loginpage.validlogin(username, password);
+
+            //Loginpage loginpage = new Loginpage(driver);
+            //loginpage.validlogin("Admin", "admin123");
 
             test.Log(Status.Info, "Usermanagement tab");
             Admin_page adminpage = new Admin_page(driver);

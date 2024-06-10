@@ -10,8 +10,9 @@ namespace OrangePOC.Helpers
 {
     internal class Testreader
     {
-
-        static String json = File.ReadAllText(@"C:\Users\al4041\source\repos\OrangePOC\OrangePOC\Helpers\Testdata.json");
+        public static string workingDirectory = Environment.CurrentDirectory;
+        public static string testdatapath = Directory.GetParent(workingDirectory).Parent.Parent.FullName + "\\Helpers\\Testdata.json";
+        static String json = File.ReadAllText(testdatapath);
         dynamic data = JsonConvert.DeserializeObject(json);
 
         public string getURL()

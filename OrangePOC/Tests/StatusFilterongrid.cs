@@ -17,11 +17,18 @@ namespace OrangePOC.Tests
         [Test]
         public void GridStatus()
         {
-
+            test = extent.CreateTest("Search for status Filter ");
+            test.Log(Status.Info, "Started test login");
             Loginpage loginpage = new Loginpage(driver);
-            loginpage.validlogin("Admin", "admin123");
+            Testreader Data = new Testreader();
+            string username = Data.getUserName();
+            string password = Data.getPassword();
+            loginpage.validlogin(username, password);
 
-            test.Log(Status.Info, "Usermanagement tab");
+            //Loginpage loginpage = new Loginpage(driver);
+            //loginpage.validlogin("Admin", "admin123");
+
+
             Admin_page adminpage = new Admin_page(driver);
             adminpage.getAdminTab().Click();
             test.Log(Status.Info, "Admin button clicked");

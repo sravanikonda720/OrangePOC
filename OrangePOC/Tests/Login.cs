@@ -24,7 +24,7 @@ namespace OrangePOC.Tests
         [Test]
         public void Loginscreen()
         {
-            test = extent.CreateTest("Reading data");
+            test = extent.CreateTest("Verify login");
             test.Log(Status.Info, "Started test login");
             Loginpage loginpage = new Loginpage(driver);
             Testreader testreader = new Testreader();
@@ -33,10 +33,10 @@ namespace OrangePOC.Tests
             loginpage.validlogin(username, password);
 
             //loginpage.validlogin("Admin", "admin123");
-            //WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-            //wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//h6[text()='Dashboard']")));
-            //test.Log(Status.Info, "Dashboard is displayed or not ");
-            //test.Log(Status.Pass, "testcase passed");
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+            wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//h6[text()='Dashboard']")));
+            test.Log(Status.Info, "Dashboard is displayed ");
+            test.Log(Status.Pass, "User successfully logged into app");
 
 
 

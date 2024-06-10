@@ -51,8 +51,8 @@ namespace OrangePOC.Helpers
             //test = extent.CreateTest(TestContext.CurrentContext.Test.Name);
 
             Testreader Data = new Testreader();
-            String URL= Data.getURL();
-            
+            String URL = Data.getURL();
+
             String browserName = ConfigurationManager.AppSettings["browser"];
             InitBrowser(browserName);
             //new WebDriverManager.DriverManager().SetUpDriver(new ChromeConfig());
@@ -104,15 +104,16 @@ namespace OrangePOC.Helpers
                 test.Log(Status.Pass, "Test Passed");
             }
 
-            //driver.Quit();
-            //test.Log(Status.Info, "Browser closed");
-        }
-
-        [OneTimeTearDown]
-        public void TearDownReporting()
-        {
+            driver.Quit();
+            test.Log(Status.Info, "Browser closed");
             extent.Flush();
         }
+
+        //[OneTimeTearDown]
+        //public void TearDownReporting()
+        //{
+        //    extent.Flush();
+        //}
 
 
     }
