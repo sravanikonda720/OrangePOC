@@ -104,9 +104,9 @@ namespace OrangePOC.Helpers
                 test.Log(Status.Pass, "Test Passed");
             }
 
-            driver.Quit();
-            test.Log(Status.Info, "Browser closed");
-            extent.Flush();
+            //driver.Quit();
+            //test.Log(Status.Info, "Browser closed");
+            //extent.Flush();
         }
 
         //[OneTimeTearDown]

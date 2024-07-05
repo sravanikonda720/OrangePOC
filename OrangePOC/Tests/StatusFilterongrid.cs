@@ -44,26 +44,25 @@ namespace OrangePOC.Tests
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
             wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//span[@class='oxd-text oxd-text--span']")));
 
-            // Asserting presence of data or no data based on the search
             try
             {
                 IWebElement noDataMessage = driver.FindElement(By.XPath("//span[contains(text(), 'No Records Found')]"));
                 Assert.IsNotNull(noDataMessage, "No data found for the Status 'Enabled'.");
-                test.Log(Status.Info, "No records found for the username 'Enabled'. Assertion passed.");
+                test.Log(Status.Info, "No records found for the status 'Enabled'. Assertion passed.");
             }
             catch (NoSuchElementException)
             {
-                IList<IWebElement> rows = driver.FindElements(By.XPath("//span[@class='oxd-text oxd-text--span']"));
-                Assert.IsTrue(rows.Count > 0, "Data found for the username 'Enabled'.");
-                test.Log(Status.Info, "Records found for the username 'Enabled'. Assertion passed.");
+                IList<IWebElement> rows = driver.FindElements(By.XPath("//div[@class='oxd-table-body']/div"));
+                Assert.IsTrue(rows.Count > 0, "Data found for the status 'Enabled'.");
+                test.Log(Status.Info, "Records found for the status 'Enabled'. Assertion passed.");
 
-
-
-
-
-
+                
             }
-
         }
     }
 }
+
+
+
+
+       

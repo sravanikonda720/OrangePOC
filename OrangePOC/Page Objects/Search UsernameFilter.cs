@@ -21,7 +21,9 @@ namespace OrangePOC.Page_Objects
             PageFactory.InitElements(driver, this);
         }
 
-        [FindsBy(How = How.XPath, Using = "//div[@class='oxd-form-row']/div/div[1]/div/div[2]/child::input")]
+        [FindsBy(How = How.XPath, Using = 
+            //"//input[@class='oxd-input oxd-input--active'])[2]")]
+            "//div[@class='oxd-form-row']/div/div[1]/div/div[2]/child::input")]
         private IWebElement UsernameFilter;
 
         [FindsBy(How =How.XPath,Using = "//div[@class='oxd-form-actions']/button[2]")]

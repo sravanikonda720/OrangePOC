@@ -15,7 +15,7 @@ namespace OrangePOC.Tests
     internal class UsernameGrid : Base
     {
         [Test]
-        public void LoginandAdmin()
+        public void LoginandAdmitest()
         {
 
             test = extent.CreateTest("Add AdminLogin ");
@@ -36,7 +36,7 @@ namespace OrangePOC.Tests
 
             //GRID USERNAME FILD on Admin tab
             Search_UsernameFilter usernameFilter = new Search_UsernameFilter(driver);
-            usernameFilter.getUsernameFilter().SendKeys("sravani");
+            usernameFilter.getUsernameFilter().SendKeys("admin");
             test.Log(Status.Info, "sravani value provided on usernameFilteronGRID");
 
             //Click on Serach Button

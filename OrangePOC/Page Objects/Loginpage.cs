@@ -27,6 +27,18 @@ namespace OrangePOC.Page_Objects
         [FindsBy(How = How.XPath, Using = "//button[@type='submit']")]
         private IWebElement submit;
 
+        [FindsBy(How = How.XPath, Using = "//p[@class='oxd-userdropdown-name']")]
+        //"//*[@id=\"app\"]/div[1]/div[1]/header/div[1]/div[2]/ul/li/span/i')]")]
+        //"//ul[@class='oxd-dropdown-menu']")]
+        //"//*[@id=\"app\"]/div[1]/div[1]/header/div[1]/div[2]/ul/li/ul')]")]
+        //"//*[@id=\"app\"]/div[1]/div[1]/header/div[1]/div[2]/ul/li/span/p')]")]
+        private IWebElement profileIcon;
+
+        [FindsBy(How = How.XPath, Using = "//a[@href='/web/index.php/auth/logout']")]
+        //"//*[@id=\"app\"]/div[1]/div[1]/header/div[1]/div[2]/ul/li/ul/li[4]/a)]")]
+        private IWebElement logoutButton;
+
+
         //[FindsBy(How = How.XPath, Using = "//h6[linktext='Dashboard']")]
 
         //private IWebElement dashboard;
@@ -59,6 +71,24 @@ namespace OrangePOC.Page_Objects
             return submit;
         }
 
-       
+        public void Logout()
+        {
+            profileIcon.Click();
+            logoutButton.Click();
+        }
+        public bool IsLoginSuccessful()
+        {
+            try
+            {
+                
+                IWebElement element = driver.FindElement(By.XPath("//element-indicating-successful-login"));
+                return element.Displayed;
+            }
+
+            catch (NoSuchElementException)
+            {
+                return false;
+            }
+        }
     }
 }
