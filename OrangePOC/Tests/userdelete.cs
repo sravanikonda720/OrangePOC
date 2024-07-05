@@ -41,7 +41,7 @@ namespace OrangePOC.Tests
             test.Log(Status.Info, "Admin button clicked");
 
             Deleteuser dl = new Deleteuser(driver);
-            dl.UserDelete("sravani12");
+            dl.UserDelete("sravani123");
             dl.getconfirmdeleteUser().Click();
             dl.getuserdeletedbutton().Click();
         }     
