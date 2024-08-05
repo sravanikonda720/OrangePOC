@@ -53,7 +53,7 @@ namespace OrangePOC.Helpers
             Testreader Data = new Testreader();
             String URL = Data.getURL();
 
-            String browserName = ConfigurationManager.AppSettings["browser"];
+            String browserName = ConfigurationManager.AppSettings["browser"];//driivng from appsetting json 
             InitBrowser(browserName);
             //new WebDriverManager.DriverManager().SetUpDriver(new ChromeConfig());
             //driver = new ChromeDriver();
@@ -69,7 +69,7 @@ namespace OrangePOC.Helpers
         //    return driver;
         //}
 
-        public void InitBrowser(string browserName)
+        public void InitBrowser(string browserName)//this is method we are calling in Setup 
         {
             switch (browserName)
             {

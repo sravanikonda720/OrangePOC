@@ -19,7 +19,8 @@ namespace OrangePOC.Page_Objects
         }
 
         [FindsBy(How = How.Name, Using = "username")]
-        private IWebElement username;
+        private IWebElement username;//give variable as username 
+        
 
         [FindsBy(How = How.Name, Using = "password")]
         private IWebElement password;
@@ -32,7 +33,10 @@ namespace OrangePOC.Page_Objects
         //"//ul[@class='oxd-dropdown-menu']")]
         //"//*[@id=\"app\"]/div[1]/div[1]/header/div[1]/div[2]/ul/li/ul')]")]
         //"//*[@id=\"app\"]/div[1]/div[1]/header/div[1]/div[2]/ul/li/span/p')]")]
+        //CSS selector tagname[Attrivute='Value']
+        //Xpath selector //tagname[@attribute='value']
         private IWebElement profileIcon;
+        //Private IWebElement profileIcon =>driver.FindElement(By.Xpath("//p[@class='oxd-userdropdown-name']")]//need to follow in this way
 
         [FindsBy(How = How.XPath, Using = "//a[@href='/web/index.php/auth/logout']")]
         //"//*[@id=\"app\"]/div[1]/div[1]/header/div[1]/div[2]/ul/li/ul/li[4]/a)]")]
@@ -57,7 +61,7 @@ namespace OrangePOC.Page_Objects
 
 
 
-        public IWebElement getUsername()
+        public IWebElement getUsername()//these are methods to use in testscript to perform actions 
         {
             return username;
         }

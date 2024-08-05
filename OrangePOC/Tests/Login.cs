@@ -26,14 +26,16 @@ namespace OrangePOC.Tests
         {
             test = extent.CreateTest("Verify login");
             test.Log(Status.Info, "Started test login");
-            Loginpage loginpage = new Loginpage(driver);
+            Loginpage loginpage = new Loginpage(driver);//Creating object of a calss to use that class in testcsript
+                                                        //Loginpage is a class loginpageis a object to the class 
             Testreader testreader = new Testreader();
             string username = testreader.getUserName();
             string password = testreader.getPassword();
             loginpage.validlogin(username, password);
 
             //loginpage.validlogin("Admin", "admin123");
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+            //driver.Manage().Timeouts().ImplicitWait=TimeSpan.FromSeconds(10);//this for complete webpage to load 
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));//this for particular webelement to be see or clickable 
             wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//h6[text()='Dashboard']")));
             test.Log(Status.Info, "Dashboard is displayed ");
             test.Log(Status.Pass, "User successfully logged into app");
