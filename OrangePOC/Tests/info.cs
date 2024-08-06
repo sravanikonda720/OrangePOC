@@ -43,10 +43,10 @@ namespace OrangePOC.Tests
    
                 infoscreen.getsubmit().Click();
 
-            String ExpectedMessage = "Success\r\nSuccessfully Updated";
-            IWebElement Successmessage = driver.FindElement(By.XPath("//div[@class='oxd-toast-content oxd-toast-content--success']"));
+            String ExpectedMessage = "Successfully Updated";
+            IWebElement Successmessage = driver.FindElement(By.XPath("//*[@id=\"oxd-toaster_1\"]/div/div[1]/div[2]/p[2]"));
             String Actualmessage = Successmessage.Text;
-            
+            Console.WriteLine(Actualmessage);            
 
             //*[@id="oxd-toaster_1"]
 
